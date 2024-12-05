@@ -38,6 +38,7 @@ pipeline {
             steps {
                 echo 'Pushing Imgaet to docker hub'
                 sh 'docker push $NEXUS_DOCKER_REPO/fakeweb:$BUILD_NUMBER'
+                skipPublishingChecks()
             }
         }
     }
